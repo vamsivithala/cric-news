@@ -1,7 +1,9 @@
 <div class="d-flex justify-content-between align-items-center">
     <h1>cricnews</h1>
-    <div>
-        routes placeholder
+    <div class="d-flex">
+        <div *ngFor="let route of routes">
+            <a class="mx-2 p-1" href="{{route.route}}">{{route.routeLabel}}</a>
+        </div>
     </div>
 
 </div>

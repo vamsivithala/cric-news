@@ -1,1 +1,6 @@
-<p>players works!</p>
+<ng-container *ngIf="players$ | async as playersResponse">
+
+    <div *ngFor="let playerObject of playersResponse.content.players.results">
+        {{playerObject.name}} -- {{playerObject.battingStyles}}
+    </div>
+</ng-container>
