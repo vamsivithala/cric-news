@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ColDef } from 'ag-grid-community';
 import { Observable } from 'rxjs';
 import { PlayersService } from './players.service';
 
@@ -10,6 +11,21 @@ import { PlayersService } from './players.service';
 export class PlayersComponent implements OnInit {
   dummyArray: any = [1, 2, 3];
   public players$!: Observable<any>;
+  defaultColDef = {
+    sortable: true
+  };
+  columnDefs: ColDef[] = [
+    {
+      field: 'name',
+      headerName: 'Player Name',
+      filter: 'agTextColumnFilter',
+      floatingFilter: true
+    },
+    {
+      field: 'playingRoles',
+      headerName: 'Roles'
+    }
+  ];
 
   constructor(
     private playersService: PlayersService
