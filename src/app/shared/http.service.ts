@@ -10,7 +10,7 @@ export class HttpService {
     private httpClient: HttpClient
   ) { }
 
-  public httpGet(url: string) {
-    return this.httpClient.get(url)
+  public httpGet(url: string, options: any) {
+    return this.httpClient.get(url, options)
   }
 }
