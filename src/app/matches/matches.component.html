@@ -1,3 +1,6 @@
-This is matches page
-
-here you ucan see matches
+<ng-container *ngIf="matches$ | async as macthesResponse">
+    <div *ngFor="let matchObj of macthesResponse.results">{{matchObj.type}}
+        <div *ngFor="let seriesObj of matchObj.series">{{
+            seriesObj.series_name}}</div>
+    </div>
+</ng-container>
