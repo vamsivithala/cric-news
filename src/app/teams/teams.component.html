@@ -1,1 +1,13 @@
-<p>teams works!</p>
+<ng-container *ngIf="teams$ | async as teams">
+    <div *ngIf="teams && teams.list.length > 0">
+        <h2>Teams</h2>
+        <ul>
+            <li *ngFor="let team of teams.list">
+                {{team.teamName }} {{team.countryName }}
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="!teams || teams.list.length === 0">
+        <p>No teams found.</p>
+    </div>
+</ng-container>
