@@ -1,13 +1,13 @@
-<ng-container *ngIf="teams$ | async as teams">
-    <div *ngIf="teams && teams.list.length > 0">
-        <h2>Teams</h2>
-        <ul>
-            <li *ngFor="let team of teams.list">
-                {{team.teamName }} {{team.countryName }}
-            </li>
-        </ul>
-    </div>
-    <div *ngIf="!teams || teams.list.length === 0">
-        <p>No teams found.</p>
-    </div>
-</ng-container>
+<div class="m-2">
+    <ng-container *ngIf="teams$ | async as teams else loaderMessage">
+        <ag-grid-angular class="ag-theme-alpine" style="height: calc(100vh - 80px); width: 100%" [rowData]="teams"
+            [columnDefs]="columnDefs" class="ag-theme-alpine" [suppressCellSelection]="true"
+            [defaultColDef]="defaultColDef" (gridReady)="onGridReady($event)">
+        </ag-grid-angular>
+    </ng-container>
+    <ng-template #loaderMessage>
+        <div class="alert alert-info">
+            Grid loading...
+        </div>
+    </ng-template>
+</div>
