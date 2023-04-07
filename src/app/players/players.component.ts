@@ -24,7 +24,15 @@ export class PlayersComponent implements OnInit {
     {
       field: 'playingRoles',
       headerName: 'Roles'
-    }
+    },
+    {
+      field: 'battingStyles',
+      headerName: 'Batting Style'
+    },
+    {
+      field: 'bowlingStyles',
+      headerName: 'Bowling Style'
+    },
   ];
 
   constructor(
