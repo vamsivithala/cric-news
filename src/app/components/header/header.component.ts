@@ -11,10 +11,7 @@ export class HeaderComponent {
       route: 'players',
       routeLabel: 'Players'
     },
-    {
-      route: 'matches',
-      routeLabel: 'Matches'
-    },
+
     {
       route: 'teams',
       routeLabel: 'Teams'
