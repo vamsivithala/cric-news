@@ -1,28 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../shared/http.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MatchesService {
-
-  constructor(
-    private httpService: HttpService
-  ) { }
-
-  getMatches() {
-    const url = 'https://cricket-live-data.p.rapidapi.com/series';
-    const options = {
+  private apiUrl = 'https://cricket-live-data.p.rapidapi.com/series'
+  private httpOptions = {
+    headers: new HttpHeaders({
       method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': 'a2a4ecea78mshb6975d334be1826p185679jsn40e47b02d1bf',
-        'X-RapidAPI-Host': 'cricket-live-data.p.rapidapi.com'
-      }
-    };
-    return this.httpService.httpGet(url, { headers: options.headers });
-    fetch('https://cricket-live-data.p.rapidapi.com/series', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
+      'X-RapidAPI-Key': 'a2a4ecea78mshb6975d334be1826p185679jsn40e47b02d1bf',
+      'X-RapidAPI-Host': 'cricket-live-data.p.rapidapi.com'
+
+    })
+  };
+  constructor(private http: HttpClient) { }
+
+  getMatches(): Observable<any> {
+    return this.http.get<any>(this.apiUrl, this.httpOptions)
   }
 }
