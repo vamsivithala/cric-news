@@ -1,0 +1,35 @@
+
+RxJS operators
+    - map, tap etc..
+- how tp combine observables - siwcthmap, merge map, concatmap, flat map
+    - using subscrivbe method in compoennet vs attaching observable to htmnl - pros vs cons
+        - css calc() - how to use it
+            - nexted json to flat json - how to do this - **
+                - {
+                    name: "ravi",
+                    followers: [
+                        {
+                            name: "dummy1",
+
+                        },
+                        {
+                            name: "dummy2"
+                        }
+                    ],
+                    address: {
+                        street: "channagar",
+                        map: {
+                            latitude: 180,
+                            longotude: 90
+                        }
+                    }
+                }
+
+{
+        name: "ravi",
+        follower1: "dummy1",
+        follower2: "dummy2",
+        streetAddress: "channagar",
+        mapLatitude: 180,
+        mapLongotude: 90
+    }
