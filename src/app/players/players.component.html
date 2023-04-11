@@ -1,8 +1,10 @@
-<ng-container *ngIf="players$ | async as playersResponse">
-    <h3>Contracted Players</h3>
-    <div style="height: 100vh; width: 100%;">
-        <ag-grid-angular style="width: 100%; height: 100%" class="ag-theme-alpine" [columnDefs]="columnDefs"
-            [defaultColDef]="defaultColDef" [rowData]="playersResponse.content.players.results"
-            [animateRows]="true"></ag-grid-angular>
-    </div>
-</ng-container>
+<div class="m-2">
+    <ng-container *ngIf="players$ | async as playersResponse">
+
+        <div style="height: 100vh; width: 100%;">
+            <ag-grid-angular style="width: 100%; height: 100%" class="ag-theme-alpine" [columnDefs]="columnDefs"
+                [defaultColDef]="defaultColDef" [rowData]="playersResponse.content.players.results"
+                [animateRows]="true"></ag-grid-angular>
+        </div>
+    </ng-container>
+</div>
