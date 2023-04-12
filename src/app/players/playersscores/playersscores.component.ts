@@ -18,6 +18,7 @@ export class PlayersscoresComponent implements OnInit {
 
     this.chartOptions = {
       chart: {
+        height: 500,
         type: 'column'
       },
       title: {
