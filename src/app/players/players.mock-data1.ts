@@ -1,0 +1,1 @@
+export const playerScore = { "scores": [{ "playername": "Virat Kohli", "playerruns": 6789 }, { "playername": "Ravindra Jadeja", "playerruns": 5123 }, { "playername": "KL Rahul", "playerruns": 5678 }, { "playername": "Rishab Pant", "playerruns": 4567 }, { "playername": "Dhoni", "playerruns": 7897 }] } 
